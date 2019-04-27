@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+             xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+             style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+             app:boxStrokeColor="@color/colorAccent"
+             app:boxStrokeWidth="2dp"
+             app:boxBackgroundColor="@color/colorPrimaryDark"
+             app:hintEnabled="true"
+             app:helperText="Enter like Firsr Floor | 2nd floor "
+             app:helperTextEnabled="true"
+             app:helperTextTextColor="@android:color/holo_red_light"
+             app:boxCornerRadiusBottomEnd="10dp"
+             android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/et_add_floor_name"
+            android:hint="Floor Name"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="24sp"/>
+
+</com.google.android.material.textfield.TextInputLayout>

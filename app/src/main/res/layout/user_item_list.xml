@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_margin="4dp"
+              app:cardElevation="4dp"
+              app:cardCornerRadius="10dp"
+              app:contentPadding="4dp"
+              android:layout_height="wrap_content">
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:padding="4dp"
+                  android:layout_height="match_parent">
+
+
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            tools:srcCompat="@tools:sample/avatars"
+
+            android:id="@+id/iv_user_item_image"/>
+        <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                tools:srcCompat="@tools:sample/avatars"
+
+                android:id="@+id/iv_user_item_image_doc"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal" android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="RoomNo::"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/tv_user_item_room_num_static"/>
+            <TextView
+                    android:text="RoomNo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/tv_user_item_room_num"/>
+        </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Name:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:padding="2dp"
+                android:id="@+id/tv_user_item_name_static"/>
+        <TextView
+                android:text="Name"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:padding="2dp"
+                android:id="@+id/tv_user_item_name"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Phone:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_phone_static"/>
+        <TextView
+                android:text="Phone"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_phone"/>
+
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Father:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_father_static"/>
+        <TextView
+                android:text="Father"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_father"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Address:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_address_static"/>
+        <TextView
+                android:text="Address"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_address"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Joining:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_room_Joining_static"/>
+        <TextView
+                android:text="Joining Date"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_room_Joining"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll"
+            android:orientation="horizontal" android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Closing:: "
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_room_closing_static"/>
+        <TextView
+                android:text="Closing Date"
+                android:layout_width="0dp"
+                android:layout_weight="1.25"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/tv_user_item_room_closing"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_margin="4dp"
+            android:layout_height="match_parent">
+    <Button
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_user_item_update"
+            android:layout_weight="0.50"
+            android:background="@android:drawable/ic_menu_edit"
+            android:backgroundTint="@android:color/holo_green_light"
+            />
+        <Button
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_user_item_delete"
+                android:background="@android:drawable/ic_menu_delete"
+                android:backgroundTint="@android:color/holo_red_light"
+        />
+    </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

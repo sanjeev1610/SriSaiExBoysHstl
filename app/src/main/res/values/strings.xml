@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SriSaiExBoysHstl</string>
+    <string-array name="state">
+        <item>Available</item>
+        <item>Not Available</item>
+    </string-array>
+</resources>

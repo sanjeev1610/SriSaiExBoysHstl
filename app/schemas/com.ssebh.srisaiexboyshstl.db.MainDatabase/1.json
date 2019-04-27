@@ -1,0 +1,259 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c2a7a9db290d7a1013f0cc31b1f382f5",
+    "entities": [
+      {
+        "tableName": "Floor_Cat",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`floor_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `floor_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "floor_id",
+            "columnName": "floor_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "floor_name",
+            "columnName": "floor_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "floor_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Floor_Cat_floor_id",
+            "unique": true,
+            "columnNames": [
+              "floor_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Floor_Cat_floor_id` ON `${TABLE_NAME}` (`floor_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Rooms_In_Floor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`room_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `room_num` INTEGER NOT NULL, `room_type` TEXT NOT NULL, `room_beds` INTEGER NOT NULL, `room_state` TEXT NOT NULL, `room_of_floor_id` INTEGER NOT NULL, FOREIGN KEY(`room_of_floor_id`) REFERENCES `Floor_Cat`(`floor_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "room_id",
+            "columnName": "room_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "room_num",
+            "columnName": "room_num",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "room_type",
+            "columnName": "room_type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "room_beds",
+            "columnName": "room_beds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "room_state",
+            "columnName": "room_state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "room_of_floor_id",
+            "columnName": "room_of_floor_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "room_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Rooms_In_Floor_room_num",
+            "unique": true,
+            "columnNames": [
+              "room_num"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Rooms_In_Floor_room_num` ON `${TABLE_NAME}` (`room_num`)"
+          },
+          {
+            "name": "index_Rooms_In_Floor_room_of_floor_id",
+            "unique": false,
+            "columnNames": [
+              "room_of_floor_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Rooms_In_Floor_room_of_floor_id` ON `${TABLE_NAME}` (`room_of_floor_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Floor_Cat",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "room_of_floor_id"
+            ],
+            "referencedColumns": [
+              "floor_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Users_In_Rooms",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `user_father_name` TEXT NOT NULL, `user_phone` INTEGER NOT NULL, `user_image_url` TEXT NOT NULL, `user_doc_url` TEXT NOT NULL, `joining_date` TEXT NOT NULL, `closing_date` TEXT NOT NULL, `user_in_room_num` INTEGER NOT NULL, `house_num` TEXT NOT NULL, `village` TEXT NOT NULL, `street` TEXT NOT NULL, `mandal` TEXT NOT NULL, `district` TEXT NOT NULL, `state` TEXT NOT NULL, `pincode` INTEGER NOT NULL, FOREIGN KEY(`user_in_room_num`) REFERENCES `Rooms_In_Floor`(`room_num`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "user_id",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_name",
+            "columnName": "user_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_father_name",
+            "columnName": "user_father_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_phone",
+            "columnName": "user_phone",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_image_url",
+            "columnName": "user_image_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_doc_url",
+            "columnName": "user_doc_url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "joining_date",
+            "columnName": "joining_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "closing_date",
+            "columnName": "closing_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_in_room_num",
+            "columnName": "user_in_room_num",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.house_num",
+            "columnName": "house_num",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.village",
+            "columnName": "village",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.street",
+            "columnName": "street",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.mandal",
+            "columnName": "mandal",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.district",
+            "columnName": "district",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user_address.pincode",
+            "columnName": "pincode",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "user_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Users_In_Rooms_user_in_room_num",
+            "unique": false,
+            "columnNames": [
+              "user_in_room_num"
+            ],
+            "createSql": "CREATE  INDEX `index_Users_In_Rooms_user_in_room_num` ON `${TABLE_NAME}` (`user_in_room_num`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Rooms_In_Floor",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_in_room_num"
+            ],
+            "referencedColumns": [
+              "room_num"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"c2a7a9db290d7a1013f0cc31b1f382f5\")"
+    ]
+  }
+}
